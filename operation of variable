@@ -1,0 +1,10 @@
+1. assignment 
+   eg. SSID="${AP_SSID}""_""${six_bytes_mac}"
+   the variable should be used "" to include, in case of the variable have blank space in the end, and it will case unexpected result.
+   eg. six_bytes_mac=${six_bytes_mac:9}
+   get the part from the 9th position.
+   eg. six_bytes_mac=${six_bytes_mac//:/}
+   use the "" blank spcae to replace the :.
+2. modify the file 
+   sed  -i 's/roll/'"${SSID}"'/g' /pref/wifi.conf
+   search the "roll" key word, and use the variable of ${SSID} to repalce it, it will modify the wifi.conf file directly(-i).
